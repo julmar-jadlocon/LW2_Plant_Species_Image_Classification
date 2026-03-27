@@ -1,33 +1,42 @@
-# Plant Classification Project: Training Analysis
+# Model Training & Evaluation Report
 
-This report outlines the experimental results and challenges encountered during the development of the plant species classification model.
+### 📋 Project Overview
+This section outlines the experimental results and challenges encountered during the development of the plant classification model.
 
 ---
 
-### 1. Impact of Dataset Size on Accuracy
-With **250 images per class**, the model reached a "tipping point" in performance. 
-* **The Good:** Because each of the 20 species had an identical image count, the model remained **balanced** and did not show bias toward any specific plant. 
-* **The Challenge:** 250 images is a relatively small dataset for deep learning. The model struggled to generalize across different lighting conditions and angles due to a lack of diverse examples.
+### 1. How did the number of images per class affect your model’s accuracy?
+> **Analysis:** Having **250 images per class** provided a solid foundation, but it was likely the "tipping point" for the model's performance.
 
-### 2. Common Misclassifications
-The most frequent errors occurred between **Holy Basil** and **Sweet Basil**. 
-* **Reason:** These species share high **visual similarity** (low inter-class variance). 
-* **Details:** Both have similar green, ovate leaves. Subtle differences—like the toothier edges and hairy stems of Holy Basil versus the smoother, glossier leaves of Sweet Basil—were difficult for the model to distinguish without higher-resolution data or a larger sample size.
+With a relatively small dataset, the model's accuracy was decent, but it struggled to generalize to every possible angle or lighting condition. Because the image count was identical for all 20 species, the model remained **balanced** (it didn't favor one plant over another), but the overall accuracy was limited by the lack of diverse examples for the model to learn from.
 
-### 3. Hyperparameter Tuning (Epochs, Batch Size, & Learning Rate)
-Finding the "sweet spot" for training was critical for stability:
-* **Epochs:** Increasing to 50 led to **overfitting** (memorizing rather than learning). Sticking to **23 epochs** provided the best balance.
-* **Learning Rate:** Set to **0.0001** to ensure the model converged carefully without "overshooting" the optimal solution.
-* **Batch Size:** A size of **16** was chosen to maintain training stability while staying within the limits of the available hardware.
+---
 
-### 4. Dataset Collection & Labeling Challenges
-The primary hurdle was the **manual nature** of the workflow:
-* **Volume:** Manually downloading 5,000 images (20 species × 250 images) was incredibly time-consuming.
-* **Verification:** Ensuring every image was correctly labeled required intense focus, as many species look nearly identical to the human eye, increasing the risk of human error during the labeling phase.
+### 2. Which plant species were most commonly misclassified and why?
+> **Result:** The most common misclassifications occurred between **Holy Basil** and **Sweet Basil**.
 
-### 5. Future Improvements
-To improve the model while respecting **hardware limitations**, I would implement the following:
-1.  **Data Augmentation:** Digitally flipping, rotating, or zooming into existing images. This "tricks" the model into seeing more variety without increasing storage or memory load.
-2.  **Pre-trained Architectures:** Utilizing Transfer Learning (e.g., MobileNet or ResNet) to leverage features already learned from larger datasets.
+This happened because these two species share extremely high **visual similarity**. Both plants have similar green, ovate leaves and growth patterns. To a computer model, the subtle differences—like the slightly toothier edges or the hairier stems of Holy Basil compared to the smoother, glossier leaves of Sweet Basil—can be very hard to distinguish without a much higher resolution or a significantly larger dataset.
+
+---
+
+### 3. How did changing the hyperparameters affect the training results?
+| Parameter | Value | Effect |
+| :--- | :--- | :--- |
+| **Epochs** | 23 | Found the "sweet spot"; 50 epochs caused **overfitting**. |
+| **Batch Size** | 16 | Allowed the model to update frequently while staying stable on hardware. |
+| **Learning Rate** | 0.0001 | Small enough to ensure careful learning without "overshooting." |
+
+---
+
+### 4. What challenges did you encounter during dataset collection and labeling?
+* **Manual Effort:** The primary challenge was the manual nature of the process. Manually downloading **5,000 images** (20 species $\times$ 250 images) was incredibly time-consuming.
+* **Human Error:** Ensuring every image was correctly labeled required significant focus, especially when certain plants looked nearly identical to the naked eye.
+
+---
+
+### 5. If you were to improve your model, what specific changes would you make?
+To improve the model while working within **hardware limitations**, I would implement:
+1. **Data Augmentation:** Digitally flipping or rotating existing images to "trick" the model into seeing more variety without increasing storage load.
+2. **Efficient Architectures:** Using more efficient pre-trained models (Transfer Learning) to get better results with less computational power.
 
 ---
