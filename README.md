@@ -64,7 +64,9 @@ The model is trained to recognize the following 20 plant species:
 
 🏋️ Model Training Details
 The model was trained using the following parameters:
+
 <img width="209" height="322" alt="Screenshot 2026-03-27 193046" src="https://github.com/user-attachments/assets/5446bb7d-e640-4663-9a56-c2b5e1658c66" />
+
 Epochs: 23
 
 Batch Size: 16
