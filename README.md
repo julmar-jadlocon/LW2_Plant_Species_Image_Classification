@@ -106,6 +106,8 @@ The model is trained to recognize the following 20 plant species:
 
 
 
+
+
 **Model Training Details**
 
 The model was trained using the following parameters:
