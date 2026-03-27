@@ -1,9 +1,11 @@
 **🌿 Non-Native Cultivated Plant Classifier**
+
 📌 Project Overview
 
 This project focuses on developing an image classification model using Teachable Machine to identify different non-native cultivated plant species.
 
 **🎯 Objectives**
+
 The main goals of this project are to:
 
 🌱 Automatically identify and classify 20 non-native cultivated plants
@@ -15,7 +17,8 @@ Platform Used: Teachable Machine
 Model Type: Image Classification
 Input: Plant images
 Output: Predicted plant species
-🌼 Plant Classes
+
+**🌼 Plant Classes**
 
 The model is trained to recognize the following 20 plant species:
 
@@ -102,18 +105,19 @@ The model is trained to recognize the following 20 plant species:
 20	Busy Lizzie -	Impatiens walleriana -	Shade-loving plant with vibrant blooms
 
 
-🏋️ Model Training Details
+
+**Model Training Details**
 The model was trained using the following parameters:
 
 <img width="209" height="322" alt="Screenshot 2026-03-27 193046" src="https://github.com/user-attachments/assets/5446bb7d-e640-4663-9a56-c2b5e1658c66" />
 
-Epochs: 23
+**Epochs: 23
 
 Batch Size: 16
 
 Learning Rate: 0.0001
 
-Number of Images per Class: 250
+Number of Images per Class: 250**
 
 These parameters were chosen to balance training time and model accuracy while ensuring good generalization across plant species. 
 
