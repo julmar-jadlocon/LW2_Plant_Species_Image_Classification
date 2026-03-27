@@ -127,7 +127,9 @@ These parameters were chosen to balance training time and model accuracy while e
 
 
 📊 Model Evaluation
+
 The model’s performance was evaluated using the following metrics:
+
 
 📌 Confusion Matrix – Shows how well the model distinguishes between different plant classes
 
