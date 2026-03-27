@@ -21,7 +21,7 @@ The model is trained to recognize the following 20 plant species:
 
 **#	Common Name	Scientific Name	Description**
 
-![large (4)](https://github.com/user-attachments/assets/5090e364-ccf6-4373-a2bc-840a8b208664)
+<img src="https://github.com/user-attachments/assets/5090e364-ccf6-4373-a2bc-840a8b208664" width="300">
 1	Common Chrysanthemum	- Chrysanthemum morifolium	- Bright ornamental flowers used in gardens and arrangements
 
 ![large (36)](https://github.com/user-attachments/assets/baabc897-2b2a-4237-bf33-65a3f4e3afaf)
