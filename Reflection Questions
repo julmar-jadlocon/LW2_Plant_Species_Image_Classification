@@ -1,42 +1,48 @@
-# Model Training & Evaluation Report
+# 🌿 Plant Classification Project: Analysis & Evaluation
 
-### 📋 Project Overview
-This section outlines the experimental results and challenges encountered during the development of the plant classification model.
+## 1. Impact of Dataset Size
+> **Question:** How did the number of images per class affect your model’s accuracy?
 
----
-
-### 1. How did the number of images per class affect your model’s accuracy?
-> **Analysis:** Having **250 images per class** provided a solid foundation, but it was likely the "tipping point" for the model's performance.
-
-With a relatively small dataset, the model's accuracy was decent, but it struggled to generalize to every possible angle or lighting condition. Because the image count was identical for all 20 species, the model remained **balanced** (it didn't favor one plant over another), but the overall accuracy was limited by the lack of diverse examples for the model to learn from.
+Having **250 images per class** provided a solid foundation, but it was likely the "tipping point" for the model's performance. 
+* **Generalization:** With a relatively small dataset, the model struggled to generalize to every possible angle or lighting condition. 
+* **Balance:** Because the image count was identical for all 20 species, the model remained balanced (it didn't favor one plant over another), but overall accuracy was limited by the lack of diverse examples.
 
 ---
 
-### 2. Which plant species were most commonly misclassified and why?
-> **Result:** The most common misclassifications occurred between **Holy Basil** and **Sweet Basil**.
+## 2. Common Misclassifications
+> **Question:** Which plant species were most commonly misclassified and why?
 
-This happened because these two species share extremely high **visual similarity**. Both plants have similar green, ovate leaves and growth patterns. To a computer model, the subtle differences—like the slightly toothier edges or the hairier stems of Holy Basil compared to the smoother, glossier leaves of Sweet Basil—can be very hard to distinguish without a much higher resolution or a significantly larger dataset.
+The most frequent errors occurred between **Holy Basil** and **Sweet Basil** due to extremely high **visual similarity**. 
+* **The "Why":** Both plants have similar green, ovate leaves and growth patterns. 
+* **The Detail:** Subtle differences—like the toothier edges and hairy stems of Holy Basil versus the smoother, glossier leaves of Sweet Basil—are hard for a model to distinguish without higher resolution or a significantly larger dataset.
 
 ---
 
-### 3. How did changing the hyperparameters affect the training results?
-| Parameter | Value | Effect |
+## 3. Hyperparameter Training Results
+> **Question:** How did changing the epochs, batch size, or learning rate affect the training results?
+
+| Parameter | Value | Impact on Training |
 | :--- | :--- | :--- |
 | **Epochs** | 23 | Found the "sweet spot"; 50 epochs caused **overfitting**. |
-| **Batch Size** | 16 | Allowed the model to update frequently while staying stable on hardware. |
-| **Learning Rate** | 0.0001 | Small enough to ensure careful learning without "overshooting." |
+| **Batch Size** | 16 | Kept the model updates frequent and stable on current hardware. |
+| **Learning Rate** | 0.0001 | Allowed for careful convergence without "overshooting." |
 
 ---
 
-### 4. What challenges did you encounter during dataset collection and labeling?
-* **Manual Effort:** The primary challenge was the manual nature of the process. Manually downloading **5,000 images** (20 species $\times$ 250 images) was incredibly time-consuming.
-* **Human Error:** Ensuring every image was correctly labeled required significant focus, especially when certain plants looked nearly identical to the naked eye.
+## 4. Challenges in Collection & Labeling
+> **Question:** What challenges did you encounter during dataset collection and labeling?
+
+The primary challenge was the **manual nature** of the process:
+1. **Time Consumption:** Manually downloading 5,000 images (20 species $\times$ 250 images) was incredibly labor-intensive.
+2. **Precision:** Ensuring every image was correctly labeled required intense focus, as many species look nearly identical to the human eye, increasing the risk of human error.
 
 ---
 
-### 5. If you were to improve your model, what specific changes would you make?
-To improve the model while working within **hardware limitations**, I would implement:
-1. **Data Augmentation:** Digitally flipping or rotating existing images to "trick" the model into seeing more variety without increasing storage load.
-2. **Efficient Architectures:** Using more efficient pre-trained models (Transfer Learning) to get better results with less computational power.
+## 5. Future Improvements & Constraints
+> **Question:** If you were to improve your model, what specific changes would you make and why?
+
+To improve the model while respecting **hardware limitations**, I would focus on:
+* **Data Augmentation:** Digitally flipping or rotating existing images to "trick" the model into seeing more variety without increasing storage load.
+* **Efficient Architectures:** Using pre-trained models (Transfer Learning) to get better results without needing more computational power.
 
 ---
